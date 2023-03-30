@@ -6,8 +6,8 @@ namespace SistemaBancario.UseCases.ConsultarSaldo
 {
     public class ConsultarSaldoInteractor : IConsultarSaldoInputPort
     {
-        private ICuentaRepository _repository;
-        private IConsultarSaldoOutputPort _outputPort;
+        private readonly ICuentaRepository _repository;
+        private readonly IConsultarSaldoOutputPort _outputPort;
         public ConsultarSaldoInteractor(ICuentaRepository repository, IConsultarSaldoOutputPort outputPort)
         {
             _repository = repository;

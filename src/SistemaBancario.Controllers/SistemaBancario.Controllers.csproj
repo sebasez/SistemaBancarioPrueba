@@ -6,4 +6,13 @@
     <Nullable>enable</Nullable>
   </PropertyGroup>
 
+  <ItemGroup>
+    <PackageReference Include="Microsoft.AspNetCore.Mvc.Core" Version="2.2.5" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\SistemaBancario.Presenters\SistemaBancario.Presenters.csproj" />
+    <ProjectReference Include="..\SistemaBancario.UseCasesPorts\SistemaBancario.UseCasesPorts.csproj" />
+  </ItemGroup>
+
 </Project>

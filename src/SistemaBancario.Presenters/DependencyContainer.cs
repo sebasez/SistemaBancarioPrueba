@@ -11,7 +11,7 @@ namespace SistemaBancario.Presenters
         public static IServiceCollection AddPresenters(this IServiceCollection services)
         {
             services.AddScoped<ICancelarCuentaOutputPort, CancelarCuentaPresenter>();
-            services.AddScoped<IConsultarCuentaOutputPort, ConsultarCuentaPresentar>();
+            services.AddScoped<IConsultarCuentaOutputPort, ConsultarCuentaPresenter>();
             services.AddScoped<IConsultarSaldoOutputPort, ConsultarSaldoPresenter>();
             services.AddScoped<ICrearCuentaOutputPort, CrearCuentaPresenter>();
             services.AddScoped<IConsultarMovimientosOutputPort, ConsultarMovimientosPresenter>();

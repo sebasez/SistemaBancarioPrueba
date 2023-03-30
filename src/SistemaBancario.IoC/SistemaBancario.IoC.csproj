@@ -6,4 +6,14 @@
     <Nullable>enable</Nullable>
   </PropertyGroup>
 
+  <ItemGroup>
+    <PackageReference Include="Microsoft.Extensions.DependencyInjection.Abstractions" Version="7.0.0" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\SistemaBancario.Presenters\SistemaBancario.Presenters.csproj" />
+    <ProjectReference Include="..\SistemaBancario.Repository\SistemaBancario.Repository.csproj" />
+    <ProjectReference Include="..\SistemaBancario.UseCases\SistemaBancario.UseCases.csproj" />
+  </ItemGroup>
+
 </Project>

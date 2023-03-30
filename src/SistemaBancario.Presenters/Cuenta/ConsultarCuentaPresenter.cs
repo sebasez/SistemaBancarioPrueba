@@ -3,7 +3,7 @@ using SistemaBancario.UseCasesPorts.CuentaPorts;
 
 namespace SistemaBancario.Presenters.Cuenta
 {
-    public class ConsultarCuentaPresentar : IConsultarCuentaOutputPort, IPresenter<CuentaDTO>
+    public class ConsultarCuentaPresenter : IConsultarCuentaOutputPort, IPresenter<CuentaDTO>
     {
         public CuentaDTO Content { get; private set; }
 
