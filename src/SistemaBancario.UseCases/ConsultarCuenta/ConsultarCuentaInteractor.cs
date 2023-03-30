@@ -6,12 +6,12 @@ using SistemaBancario.UseCasesPorts.CuentaPorts;
 
 namespace SistemaBancario.UseCases.ConsultaCuenta
 {
-    public class ConsultaCuentaInteractor : IConsultarCuentaInputPort
+    public class ConsultarCuentaInteractor : IConsultarCuentaInputPort
     {
         private readonly ICuentaRepository _repository;
         private readonly IConsultarCuentaOutputPort _outputPort;
         private readonly IMapper _mapper;
-        public ConsultaCuentaInteractor(ICuentaRepository repository, IMapper mapper, IConsultarCuentaOutputPort outputPort) =>
+        public ConsultarCuentaInteractor(ICuentaRepository repository, IMapper mapper, IConsultarCuentaOutputPort outputPort) =>
             (_repository, _mapper, _outputPort) = (repository, mapper, outputPort);
         public async Task Handle(ConsultaCuentaDTO consultaCuenta)
         {

@@ -2,7 +2,7 @@
 
 namespace SistemaBancario.UseCasesPorts.TransaccionPorts
 {
-    public interface IConsultaMovimientosInputPort
+    public interface IConsultarMovimientosInputPort
     {
         Task Handle(ConsultaMovimientosDTO consultaMovimientos);
     }

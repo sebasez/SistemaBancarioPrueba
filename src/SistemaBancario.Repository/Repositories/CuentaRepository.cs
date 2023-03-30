@@ -15,12 +15,12 @@ namespace SistemaBancario.Repository.Repositories
             cuenta.EstadoCuenta = false;
         }
 
-        public async Task CrearCuenta(Cuenta cuenta)
+        public async Task<Cuenta> CrearCuenta(Cuenta cuenta)
         {
-           await _context.AddAsync(cuenta);
+           return await _context.AddAsync(cuenta);
         }
 
-        public async Task<(decimal, DateTime)> ConsultaSaldo(Guid id)
+        public async Task<(decimal, DateTime)> ConsultarSaldo(Guid id)
         {
             var cuenta = await _context.Cuenta.FindAsync(id);
             return (cuenta.Saldo, cuenta.FechaSaldo);
