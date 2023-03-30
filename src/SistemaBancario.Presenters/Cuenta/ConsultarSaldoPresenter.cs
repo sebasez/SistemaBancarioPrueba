@@ -5,7 +5,7 @@ namespace SistemaBancario.Presenters.Cuenta
 {
     public class ConsultarSaldoPresenter : IConsultarSaldoOutputPort, IPresenter<SaldoDTO>
     {
-        public SaldoDTO Content { get; set; }
+        public SaldoDTO Content { get; private set; }
 
         public Task Handle(SaldoDTO saldo)
         {
