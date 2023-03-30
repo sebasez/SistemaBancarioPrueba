@@ -9,6 +9,11 @@ namespace SistemaBancario.Repository.Repositories
     {
         private readonly SistemaBancarioDbContext _context;
 
+        public TransaccionRepository(SistemaBancarioDbContext context)
+        {
+            _context = context;
+        }
+
         public async Task<IEnumerable<Transaccion>> ConsultaMovimientos(Guid id, DateTime fechaInicio, DateTime fechaFin)
         {
             return await _context.Transaccion.Where(it => it.Cuenta.Id == id && it.FechaTransaccion >= fechaInicio && it.FechaTransaccion <= fechaFin).ToListAsync();
