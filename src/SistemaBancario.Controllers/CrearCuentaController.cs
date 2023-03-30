@@ -12,7 +12,7 @@ namespace SistemaBancario.Controllers
         private readonly ICrearCuentaOutputPort _outputPort;
         private readonly ICrearCuentaInputPort _inputPort;
         public CrearCuentaController(ICrearCuentaOutputPort outputPort, ICrearCuentaInputPort inputPort)=>
-            _outputPort = outputPort;
+            (_outputPort,_inputPort) = (outputPort,inputPort);
         [HttpPost]
         public async Task<CuentaDTO> CrearCuenta(CrearCuentaDTO cuenta)
         {

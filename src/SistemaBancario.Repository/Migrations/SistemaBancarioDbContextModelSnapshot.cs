@@ -32,8 +32,8 @@ namespace SistemaBancario.Repository.Migrations
                         .HasColumnType("nvarchar(450)")
                         .HasColumnOrder(2);
 
-                    b.Property<int>("NumeroCuenta")
-                        .HasColumnType("int")
+                    b.Property<string>("NumeroCuenta")
+                        .HasColumnType("nvarchar(450)")
                         .HasColumnOrder(1);
 
                     b.Property<string>("Apellido")
@@ -80,14 +80,13 @@ namespace SistemaBancario.Repository.Migrations
                         .HasColumnOrder(0);
 
                     b.Property<string>("CuentaDocumento")
-                        .IsRequired()
                         .HasColumnType("nvarchar(450)");
 
-                    b.Property<Guid>("CuentaId")
+                    b.Property<Guid?>("CuentaId")
                         .HasColumnType("uniqueidentifier");
 
-                    b.Property<int>("CuentaNumeroCuenta")
-                        .HasColumnType("int");
+                    b.Property<string>("CuentaNumeroCuenta")
+                        .HasColumnType("nvarchar(450)");
 
                     b.Property<DateTime>("FechaTransaccion")
                         .HasColumnType("datetime2");
@@ -134,9 +133,7 @@ namespace SistemaBancario.Repository.Migrations
                 {
                     b.HasOne("SistemaBancario.Entities.POCOs.Cuenta", "Cuenta")
                         .WithMany("Transacciones")
-                        .HasForeignKey("CuentaId", "CuentaDocumento", "CuentaNumeroCuenta")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
+                        .HasForeignKey("CuentaId", "CuentaDocumento", "CuentaNumeroCuenta");
 
                     b.Navigation("Cuenta");
                 });

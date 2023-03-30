@@ -28,6 +28,8 @@ namespace SistemaBancario.UseCases.CrearCuenta
             var validarSiExisteCuenta = new CrearCuentaValidator().Validate(cuenta);
             if (!validarSiExisteCuenta.IsValid) throw new ValidationException(validarSiExisteCuenta.Errors);
             Cuenta newCuenta = _mapper.Map<Cuenta>(cuenta);
+            newCuenta.NumeroCuenta = new Random().Next(0, 10000).ToString();
+            newCuenta.NumeroCuenta = newCuenta.NumeroCuenta.PadLeft(10, '0');
             await _repository.CrearCuenta(newCuenta);
             try
             {

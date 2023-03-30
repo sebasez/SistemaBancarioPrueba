@@ -37,6 +37,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SistemaBancario.Controllers
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SistemaBancario.IoC", "src\SistemaBancario.IoC\SistemaBancario.IoC.csproj", "{8D6E436D-33A3-41D7-97B3-2D638F509807}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SistemaBancario.WebApi", "src\SistemaBancario.WebApi\SistemaBancario.WebApi.csproj", "{2524E64A-58CF-4EED-9952-E169EB6E844C}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -79,6 +81,10 @@ Global
 		{8D6E436D-33A3-41D7-97B3-2D638F509807}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{8D6E436D-33A3-41D7-97B3-2D638F509807}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{8D6E436D-33A3-41D7-97B3-2D638F509807}.Release|Any CPU.Build.0 = Release|Any CPU
+		{2524E64A-58CF-4EED-9952-E169EB6E844C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2524E64A-58CF-4EED-9952-E169EB6E844C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2524E64A-58CF-4EED-9952-E169EB6E844C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2524E64A-58CF-4EED-9952-E169EB6E844C}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -97,6 +103,7 @@ Global
 		{AFDD8111-2432-4B2B-AFAF-A85818A6E22D} = {3AE4388C-2409-43A4-901C-6EBF4587B6A9}
 		{37B05485-7808-48CA-8616-6CF5DEDCBD8A} = {AFDD8111-2432-4B2B-AFAF-A85818A6E22D}
 		{8D6E436D-33A3-41D7-97B3-2D638F509807} = {2F83E3D9-7F9C-420C-9089-B0781256F9E3}
+		{2524E64A-58CF-4EED-9952-E169EB6E844C} = {42BCD559-3089-46EF-82F0-35FE95821D29}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {9D92B1C9-C9E6-4D7C-8E7B-BF132E969646}

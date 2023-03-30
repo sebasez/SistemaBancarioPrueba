@@ -1,4 +1,5 @@
-﻿using SistemaBancario.Entities.Interfaces;
+﻿using Microsoft.EntityFrameworkCore;
+using SistemaBancario.Entities.Interfaces;
 using SistemaBancario.Entities.POCOs;
 using SistemaBancario.Repository.DataContext;
 
@@ -15,14 +16,14 @@ namespace SistemaBancario.Repository.Repositories
             cuenta.EstadoCuenta = false;
         }
 
-        public async Task<Cuenta> CrearCuenta(Cuenta cuenta)
+        public async Task CrearCuenta(Cuenta cuenta)
         {
-           return await _context.AddAsync(cuenta);
+           await _context.AddAsync(cuenta);
         }
 
         public async Task<(decimal, DateTime)> ConsultarSaldo(Guid id)
         {
-            var cuenta = await _context.Cuenta.FindAsync(id);
+            var cuenta = await _context.Cuenta.FirstOrDefaultAsync(it=>it.Id==id);
             return (cuenta.Saldo, cuenta.FechaSaldo);
         }
 

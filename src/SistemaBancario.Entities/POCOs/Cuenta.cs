@@ -8,7 +8,7 @@ namespace SistemaBancario.Entities.POCOs
     {
         [Key]
         [Column(Order = 1)]
-        public int NumeroCuenta { get; set; }
+        public string NumeroCuenta { get; set; }
         public string Nombre { get; set; }
         public string Apellido { get; set; }
         [Key]

@@ -6,7 +6,7 @@ using Microsoft.EntityFrameworkCore.Migrations;
 namespace SistemaBancario.Repository.Migrations
 {
     /// <inheritdoc />
-    public partial class SistemaBancarioInicial : Migration
+    public partial class inicial : Migration
     {
         /// <inheritdoc />
         protected override void Up(MigrationBuilder migrationBuilder)
@@ -16,7 +16,7 @@ namespace SistemaBancario.Repository.Migrations
                 columns: table => new
                 {
                     Id = table.Column<Guid>(type: "uniqueidentifier", nullable: false),
-                    NumeroCuenta = table.Column<int>(type: "int", nullable: false),
+                    NumeroCuenta = table.Column<string>(type: "nvarchar(450)", nullable: false),
                     Documento = table.Column<string>(type: "nvarchar(450)", nullable: false),
                     Nombre = table.Column<string>(type: "nvarchar(max)", nullable: false),
                     Apellido = table.Column<string>(type: "nvarchar(max)", nullable: false),
@@ -39,9 +39,9 @@ namespace SistemaBancario.Repository.Migrations
                 {
                     Id = table.Column<Guid>(type: "uniqueidentifier", nullable: false),
                     TipoTransaccion = table.Column<int>(type: "int", nullable: false),
-                    CuentaId = table.Column<Guid>(type: "uniqueidentifier", nullable: false),
-                    CuentaDocumento = table.Column<string>(type: "nvarchar(450)", nullable: false),
-                    CuentaNumeroCuenta = table.Column<int>(type: "int", nullable: false),
+                    CuentaId = table.Column<Guid>(type: "uniqueidentifier", nullable: true),
+                    CuentaDocumento = table.Column<string>(type: "nvarchar(450)", nullable: true),
+                    CuentaNumeroCuenta = table.Column<string>(type: "nvarchar(450)", nullable: true),
                     FechaTransaccion = table.Column<DateTime>(type: "datetime2", nullable: false),
                     Valor = table.Column<decimal>(type: "decimal(18,2)", nullable: false)
                 },
@@ -52,8 +52,7 @@ namespace SistemaBancario.Repository.Migrations
                         name: "FK_Transaccion_Cuenta_CuentaId_CuentaDocumento_CuentaNumeroCuenta",
                         columns: x => new { x.CuentaId, x.CuentaDocumento, x.CuentaNumeroCuenta },
                         principalTable: "Cuenta",
-                        principalColumns: new[] { "Id", "Documento", "NumeroCuenta" },
-                        onDelete: ReferentialAction.Cascade);
+                        principalColumns: new[] { "Id", "Documento", "NumeroCuenta" });
                 });
 
             migrationBuilder.CreateTable(
